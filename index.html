@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Potion Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>🧪 Potion Lab</h1>
+                <p>Master the art of potion brewing</p>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span>💰 GOLD</span>
+                    <strong id="gold">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>⭐ SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>🏆 HIGH SCORE</span>
+                    <strong id="highScore">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>📅 DAY</span>
+                    <strong id="day">1</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- GAME AREA -->
+        <main class="game-area">
+
+
+            <!-- CUSTOMER -->
+            <section class="customer-panel">
+
+                <div class="panel-title">
+                    👤 CUSTOMER
+                </div>
+
+                <div class="customer">
+
+                    <div
+                        id="customerAvatar"
+                        class="customer-avatar">
+                        🧙
+                    </div>
+
+                    <div class="customer-info">
+
+                        <h2 id="customerName">
+                            Wizard Merlin
+                        </h2>
+
+                        <p id="customerRequest">
+                            Saya membutuhkan potion!
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timer-container">
+
+                    <div class="timer-label">
+
+                        <span>⏱️ Time Remaining</span>
+
+                        <strong id="timerText">
+                            30
+                        </strong>
+
+                    </div>
+
+                    <div class="timer">
+
+                        <div
+                            id="timerFill"
+                            class="timer-fill">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-box">
+
+                    <span>
+                        PESANAN:
+                    </span>
+
+                    <div
+                        id="orderPotion"
+                        class="order-potion">
+                        ❤️ Health Potion
+                    </div>
+
+                    <div
+                        id="orderIngredients"
+                        class="order-ingredients">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CAULDRON -->
+            <section class="cauldron-panel">
+
+                <div class="panel-title">
+                    🔥 BREWING STATION
+                </div>
+
+
+                <div class="cauldron-area">
+
+                    <div
+                        id="cauldron"
+                        class="cauldron">
+                        🧪
+                    </div>
+
+                    <div
+                        id="brewStatus"
+                        class="brew-status">
+                        Pilih bahan untuk mulai meracik
+                    </div>
+
+                </div>
+
+
+                <!-- SELECTED INGREDIENTS -->
+
+                <div class="selected-title">
+                    🧺 Selected Ingredients
+                </div>
+
+                <div
+                    id="selectedIngredients"
+                    class="selected-ingredients">
+
+                    <span class="empty">
+                        Belum ada bahan
+                    </span>
+
+                </div>
+
+
+                <div class="brew-actions">
+
+                    <button
+                        id="brewButton"
+                        class="brew-button">
+
+                        🔥 BREW POTION
+
+                    </button>
+
+                    <button
+                        id="clearButton"
+                        class="clear-button">
+
+                        🗑️ CLEAR
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- INGREDIENTS -->
+            <section class="ingredients-panel">
+
+                <div class="panel-title">
+                    📦 INGREDIENTS
+                </div>
+
+                <div
+                    id="ingredients"
+                    class="ingredients">
+                </div>
+
+            </section>
+
+
+            <!-- RECIPE BOOK -->
+            <section class="recipe-panel">
+
+                <div class="panel-title">
+                    📖 RECIPE BOOK
+                </div>
+
+                <p class="recipe-help">
+                    Resep yang sudah ditemukan:
+                </p>
+
+                <div
+                    id="recipeBook"
+                    class="recipe-book">
+                </div>
+
+            </section>
+
+
+            <!-- SHOP -->
+            <section class="shop-panel">
+
+                <div class="panel-title">
+                    🛒 LAB UPGRADES
+                </div>
+
+                <div class="shop">
+
+                    <div class="upgrade">
+
+                        <div class="upgrade-icon">
+                            ⏱️
+                        </div>
+
+                        <div class="upgrade-info">
+
+                            <strong>
+                                Better Clock
+                            </strong>
+
+                            <span>
+                                +5 detik waktu customer
+                            </span>
+
+                        </div>
+
+                        <button
+                            id="timeUpgrade"
+                            class="upgrade-button">
+
+                            💰 50
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="upgrade">
+
+                        <div class="upgrade-icon">
+                            💰
+                        </div>
+
+                        <div class="upgrade-info">
+
+                            <strong>
+                                Golden Cauldron
+                            </strong>
+
+                            <span>
+                                +20% gold dari pesanan
+                            </span>
+
+                        </div>
+
+                        <button
+                            id="goldUpgrade"
+                            class="upgrade-button">
+
+                            💰 100
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="upgrade">
+
+                        <div class="upgrade-icon">
+                            🔥
+                        </div>
+
+                        <div class="upgrade-info">
+
+                            <strong>
+                                Master Fire
+                            </strong>
+
+                            <span>
+                                Bonus score saat combo
+                            </span>
+
+                        </div>
+
+                        <button
+                            id="scoreUpgrade"
+                            class="upgrade-button">
+
+                            💰 150
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- GAME OVER -->
+        <div
+            id="gameOver"
+            class="overlay hidden">
+
+            <div class="game-over-box">
+
+                <div class="over-icon">
+                    💀
+                </div>
+
+                <h2>
+                    LAB CLOSED
+                </h2>
+
+                <p>
+                    Terlalu banyak customer yang pergi.
+                </p>
+
+                <div class="results">
+
+                    <div>
+                        <span>Score</span>
+                        <strong id="finalScore">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Gold</span>
+                        <strong id="finalGold">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Day</span>
+                        <strong id="finalDay">
+                            1
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>High Score</span>
+                        <strong id="finalHighScore">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+                <button
+                    id="restartButton"
+                    class="restart-button">
+
+                    🔄 OPEN LAB AGAIN
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTIFICATION -->
+
+        <div
+            id="notification"
+            class="notification">
+
+        </div>
+
+    </div>
+
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>
